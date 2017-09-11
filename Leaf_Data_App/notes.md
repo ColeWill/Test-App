@@ -37,16 +37,3 @@ Overall, It was a fun project, and If I had to do it again I think I would try t
 It took me about 7 hrs total to complete.
 
 
-Also, Thinking about the curl requests like this helped me convert them to Node
-
-curl -k 
--H 'x-mjf-organization-id: 9' 
--H "Content-Type: application/json" 
--H 'x-mjf-api-key: secret'  
-https://secret/info
-
-curl -k 
--H 'x-mjf-organization-id: 9' 
--H "Content-Type: application/json" 
--H 'x-mjf-api-key: secret' 
-https://secret/catalog
