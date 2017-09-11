@@ -7,11 +7,12 @@
 
 3) 'touch .env' in Leaf_Data_App folder, add API_KEY='your-api-key' 
 
-4) add your endpoints 
-URI_CATALOG='https:/ ........ /catalog'
-URI_INFO='https:/ ........... /info'
+4) add your endpoints to .env file: URI_CATALOG='https:/ ........ /catalog'
 
-5) 'node index.js' to start server running on localhost:3000
+5) add your endpoints to .env file: URI_INFO='https:/ ........... /info'
+
+
+6) 'node index.js' to start server running on localhost:3000
 
 
 
