@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Leaf-API-App</title>
+	
+		<link rel="stylesheet" type="text/css" href="styles/styles.css">
+
+		<!-- angular -->
+		<script src="/bower_components/angular/angular.min.js"></script>
+		<!-- angulr route -->
+		<script src="/bower_components/angular-route/angular-route.min.js"></script>
+
+		<!-- app.js connected -->
+		
+		<script src="/js/app.js"></script>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<body ng-app="LeafApp">
+
+	<section class="container-fluid" ng-controller="LeafController as Leaf">
+		<div class="row navbar navbar-default">
+			<h1>Leaf-API-App</h1>
+			<button id="button" class="btn btn-primary" ng-click="Leaf.getCatalog()">Get Catalog</button>
+			<button id="button" class="btn btn-danger" ng-click="Leaf.getInfo()">Get Organization Info</button>
+		</div>
+
+
+		<section class="row">
+			<h2>Catalog Info</h2>
+			<div class="productBox col-lg-6 col-xl-6" ng-repeat="x in products">
+				
+				<h3>Name: {{ x.name }}</h3>
+				<p><b>Id:</b> {{ x.id }}</p>
+				<img class="img-responsive" ng-src="{{ x.primary_image_urls[0].url }}">
+				<p>Iten_Number: {{ x.item_number }}</p>
+				<p><b>Description:</b> {{ x.description }}</p>
+				<p><b>Available Online:</b> {{ x.available_online }}</p>
+				<p><b>In Stock:</b> {{ x.in_stock }}</p>
+				<p><b>Category Id:</b> {{ x.category_id }}</p>
+				<p><b>Category Name:</b> {{ x.category_name }}</p>
+				<p><b>Sub Id:</b> {{ x.subcategory_id }}</p>
+				<p><b>Sub Name:</b> {{ x.subcategory_name }}</p>
+				<p><b>Strain Id:</b> {{ x.strain_id }}</p>
+				<p><b>Strain Name:</b> {{ x.strain_name }}</p>
+				
+				<p><b>Pricing Type:</b> {{ x.pricing_type }}</p>
+				<!-- pricing. -->
+					<p>Default Price:</b> {{ x.pricing.default_price }}</p>
+					<p>{{ x.pricing.default_price}}</p>
+					<p>{{ x.pricing.pricing_group_id}}</p>
+						<p><b>Pricing Weight Id:</b> {{x.pricing.weight_prices[0].pricing_weight_id}}</p>
+						<p><b>Default Price:</b> {{x.pricing.weight_prices[1].default_price}}</p>
+				
+			</div>
+		</section>
+		
+		
+		<section>
+			<h2>Organization Info</h2>
+			<div class="productBox col-lg-6 col-xl-6" ng-repeat="Facility in info.organizations[0].facilities">
+				<p><b>Facility Id:</b> {{ Facility.id }}</p>
+				<p><b>Facility Name:</b> {{ Facility.name }}</p>
+				<p><b>Facility DBA:</b> {{ Facility.dba }}</p>
+				<p><b>Facility Type:</b> {{ Facility.type }}</p>
+				<p><b>Facility Timezone:</b> {{ Facility.timezone }}</p>
+			</div>
+
+			<div>
+				<h4>Services:</h4>
+				<div 
+					ng-repeat="service in info.organizations[0].services">
+
+					{{service}}
+				</div>
+			</div>
+		</section>
+
+		
+		
+	</section>
+
+	<!-- controllers -->
+	<script src="js/controllers/catalog.ctrl.js"></script>
+	
+	
+	
+</body>
+</html>

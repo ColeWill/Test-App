@@ -1,0 +1,19 @@
+{
+  "name": "leaf_data_app",
+  "version": "1.0.0",
+  "description": "simple app for interacting with Leaf API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cole",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "curl-to-node": "^0.1.0",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.4",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1"
+  }
+}

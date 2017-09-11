@@ -1,0 +1,22 @@
+{
+  "name": "leaf_data_app",
+  "description": "simple app for interacting with Leaf API",
+  "main": "index.js",
+  "authors": [
+    "Cole"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-route": "^1.6.6"
+  }
+}
